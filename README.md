@@ -10,12 +10,14 @@ $ uv venv --python 3.11
 $ source .venv/bin/activate
 ### 가상환경 종료
 $ deactivate
-### 모델 설치
-$ mkdir ~/sentiment-cls/packages/model/sentiment_classification/results  
-$ cd ~/sentiment-cls/packages/model/sentiment_classification/results  
+
 ### 모덷 다운로드
-$ wget https://s3.ap-northeast-1.amazonaws.com/developers.tumblbug.com/assets/KoBERT_128_CrossEntropyLoss.tar.gz
-$ tar zxvf KoBERT_128_CrossEntropyLoss.tar.gz
+$ https://drive.google.com/file/d/10Yyg_SkYDR_fQDpE7nW5OmgkOlkkdtCe/view?usp=sharing
+
+### 모델 설치 경로
+$ mkdir ~/sentiment-cls/packages/model/sentiment_classification/results
+$ cd ~/sentiment-cls/packages/model/sentiment_classification/results  
+$ unzip KoBERT_128_CrossEntropyLoss.zip
 
 ## Docker BUILD
 ### 공통
