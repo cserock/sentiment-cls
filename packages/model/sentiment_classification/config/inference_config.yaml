@@ -1,0 +1,19 @@
+MODEL:
+    results:
+        KoBERT_128_CrossEntropy: KoBERT_128_CrossEntropyLoss
+    model_name: KoBERT        #KoBERT, RoBERTa
+    max_seq_len: 128          #26, 32, 64, 128
+    pretrained_link: 
+        KoBERT: kykim/bert-kor-base
+    num_of_classes: 3
+
+TEST:
+    directory:
+        dataset: cleaned
+    checkpoint_path: 'KoBERT_128_CrossEntropyLoss'      #{model_name}_{max_seq_len}_{lossfn}(_{dataset})
+    batch_size: 64
+
+LABELING:
+    1: 'neutral'
+    2: 'positive'
+    0: 'negative'

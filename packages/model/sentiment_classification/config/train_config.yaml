@@ -1,0 +1,42 @@
+DIRECTORY:
+    dataset: cleaned #cleaned, uncased, cased, nonumber
+
+SEED:
+    random_seed: 2022
+    
+DATALOADER:
+    batch_size: 64
+    shuffle: True
+    drop_last: False
+    
+MODEL:
+    model_name: KoBERT #cnn1d, KoBERT, KoELECTRA, RoBERTa, DeBERTa
+        
+    pretrained_link: 
+        KoBERT: kykim/bert-kor-base
+        KoELECTRA: monologg/koelectra-base-v3-discriminator
+        RoBERTa: klue/roberta-base
+        DeBERTa: team-lucid/deberta-v3-base-korean
+    
+    num_of_classes: 3
+
+TRAIN:
+    num_of_epochs: 5
+    batch_size: 64
+    max_seq_len: 128        #26, 32, 64, 128
+    learning_rate:
+        pretrained: 0.00005
+        cnn1d: 0.025
+    dropout: 0.5
+    max_grad_norm: 1
+    warmup_ratio: 0.1
+    loss: CrossEntropyLoss #CrossEntropyLoss, FocalLoss, WeightedCE
+    optimizer: AdamW
+    metric:
+        - f1score
+        - accuracy
+
+LABELING:
+    1: 'neutral'
+    2: 'positive'
+    0: 'negative'
