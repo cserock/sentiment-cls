@@ -11,7 +11,7 @@ $ source .venv/bin/activate
 ### 가상환경 종료
 $ deactivate
 
-### 모덷 다운로드
+### 모델 다운로드
 $ https://drive.google.com/file/d/10Yyg_SkYDR_fQDpE7nW5OmgkOlkkdtCe/view?usp=sharing
 
 ### 모델 설치 경로
